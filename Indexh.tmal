@@ -1,0 +1,308 @@
+Index Html Samrt 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="DinaBuzz brings you beautiful romantic love stories, emotional short dramas and AI entertainment.">
+<meta name="theme-color" content="#160d2c">
+<title>DinaBuzz - AI Love Stories</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+ font-family:Arial,sans-serif;
+ background:#100b20;
+ color:white;
+}
+header{
+ background:#1b1232;
+ padding:18px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ position:sticky;top:0;z-index:10;
+ border-bottom:1px solid #493365;
+}
+.logo{font-size:25px;font-weight:bold;color:#ff77bd}
+.logo span{color:white}
+nav a{
+ color:white;text-decoration:none;
+ margin-left:12px;font-size:13px;
+}
+.hero{
+ padding:55px 20px;
+ text-align:center;
+ background:linear-gradient(135deg,#5e246e,#b73575,#30134c);
+}
+.hero h1{font-size:34px;margin-bottom:12px}
+.hero p{line-height:1.6;color:#ffe6f4}
+.btn{
+ display:inline-block;
+ background:#ff4f9a;color:white;
+ padding:12px 22px;
+ border-radius:25px;
+ text-decoration:none;
+ font-weight:bold;
+ margin-top:18px;
+ border:0;cursor:pointer;
+}
+.container{padding:25px 16px;max-width:1000px;margin:auto}
+.section-title{
+ font-size:23px;margin-bottom:18px;
+ border-left:4px solid #ff4f9a;
+ padding-left:10px;
+}
+.search{
+ width:100%;padding:14px;
+ border-radius:12px;border:1px solid #493365;
+ background:#211638;color:white;
+ margin-bottom:22px;font-size:16px;
+}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:15px;
+}
+.card{
+ background:#211638;
+ border-radius:15px;
+ overflow:hidden;
+ border:1px solid #493365;
+}
+.cover{
+ height:150px;
+ display:flex;align-items:center;
+ justify-content:center;
+ font-size:55px;
+ background:linear-gradient(140deg,#742c71,#e84f93);
+}
+.card:nth-child(2) .cover{background:linear-gradient(140deg,#332c76,#aa4bbd)}
+.card:nth-child(3) .cover{background:linear-gradient(140deg,#8b344b,#ed8a9f)}
+.card:nth-child(4) .cover{background:linear-gradient(140deg,#263f70,#5f9cce)}
+.card-content{padding:13px}
+.card h3{font-size:16px;margin-bottom:8px}
+.card p{font-size:12px;color:#cbbdd9;line-height:1.5}
+.read{
+ width:100%;margin-top:12px;padding:10px;
+ background:#ff4f9a;color:white;
+ border:0;border-radius:8px;
+ cursor:pointer;font-weight:bold;
+}
+.ad-box{
+ margin:25px 0;padding:22px;
+ text-align:center;
+ background:#281c3e;
+ border:1px dashed #b878d9;
+ border-radius:14px;
+}
+.ad-box p{color:#d5c6e3;font-size:13px;margin-top:8px}
+.ad-link{
+ display:inline-block;
+ margin-top:12px;
+ padding:12px 20px;
+ background:#ff4f9a;
+ border-radius:9px;
+ color:white;text-decoration:none;
+ font-weight:bold;
+}
+.about{
+ background:#211638;
+ padding:22px;border-radius:15px;
+ line-height:1.7;color:#e2d7ec;
+}
+footer{
+ margin-top:30px;
+ padding:25px 15px;
+ background:#1b1232;
+ text-align:center;
+ color:#cbbdd9;
+ font-size:13px;
+}
+footer a{color:#ff8ac5;margin:8px;display:inline-block}
+.modal{
+ display:none;position:fixed;inset:0;
+ background:#000c;z-index:20;
+ padding:20px;overflow:auto;
+}
+.modal-content{
+ max-width:550px;margin:50px auto;
+ background:#241735;padding:25px;
+ border-radius:15px;line-height:1.7;
+}
+.close{
+ float:right;background:#ff4f9a;
+ border:0;color:white;padding:8px 13px;
+ border-radius:7px;cursor:pointer;
+}
+@media(min-width:700px){
+ .grid{grid-template-columns:repeat(4,1fr)}
+ .hero{padding:85px 20px}
+ .hero h1{font-size:48px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <div class="logo">Dina<span>Buzz</span> ❤️</div>
+ <nav>
+  <a href="#home">Home</a>
+  <a href="#stories">Stories</a>
+  <a href="#about">About</a>
+ </nav>
+</header>
+
+<section class="hero" id="home">
+ <h1>Welcome to DinaBuzz ❤️</h1>
+ <p>Discover Beautiful Love Stories, Emotional Moments
+ and Romantic AI Short Dramas.</p>
+ <a href="#stories" class="btn">Explore Stories</a>
+</section>
+
+<main class="container">
+
+<h2 class="section-title" id="stories">❤️ Romantic Love Stories</h2>
+
+<input class="search" id="search"
+ placeholder="Search your favourite story..."
+ oninput="searchStories()">
+
+<div class="grid" id="storyGrid">
+
+<div class="card" data-title="true love">
+ <div class="cover">❤️</div>
+ <div class="card-content">
+  <h3>True Love Never Dies</h3>
+  <p>A beautiful story about two hearts separated by destiny.</p>
+  <button class="read" onclick="showStory(0)">Read Story</button>
+ </div>
+</div>
+
+<div class="card" data-title="millionaire girl">
+ <div class="cover">💑</div>
+ <div class="card-content">
+  <h3>The Millionaire's Daughter</h3>
+  <p>A poor boy falls in love with a millionaire's daughter.</p>
+  <button class="read" onclick="showStory(1)">Read Story</button>
+ </div>
+</div>
+
+<div class="card" data-title="broken heart">
+ <div class="cover">💔</div>
+ <div class="card-content">
+  <h3>Broken Heart</h3>
+  <p>Sometimes losing someone teaches us the meaning of love.</p>
+  <button class="read" onclick="showStory(2)">Read Story</button>
+ </div>
+</div>
+
+<div class="card" data-title="second chance">
+ <div class="cover">🌹</div>
+ <div class="card-content">
+  <h3>One More Chance</h3>
+  <p>Can two people find love again after a painful breakup?</p>
+  <button class="read" onclick="showStory(3)">Read Story</button>
+ </div>
+</div>
+
+</div>
+
+<!-- STORY READER -->
+<div class="modal" id="storyModal">
+ <div class="modal-content">
+  <button class="close" onclick="closeStory()">Close ✕</button>
+  <h2 id="storyTitle" style="margin:20px 0"></h2>
+  <p id="storyText"></p>
+ </div>
+</div>
+
+<!-- ADSTERRA SMARTLINK -->
+<div class="ad-box">
+ <h2>✨ Discover More Entertainment</h2>
+ <p>Sponsored link. Clicking may open an advertising page.</p>
+
+ <!-- REPLACE THIS URL WITH YOUR REAL ADSTERRA SMARTLINK -->
+ <a class="ad-link"
+ href="https://www.profitableratecpmnetwork.com/afv5pjxuku?key=625667fd5260ffe9413aea714a85dc19"
+ target="_blank"
+ rel="nofollow sponsored noopener">
+ Explore More ❤️
+ </a>
+</div>
+
+<section id="about">
+ <h2 class="section-title">About DinaBuzz</h2>
+ <div class="about">
+  Welcome to DinaBuzz!
+
+  DinaBuzz is an entertainment website featuring
+  romantic love stories, emotional short dramas
+  and creative AI-generated storytelling.
+
+  Our mission is to entertain people with
+  original stories and beautiful moments.
+
+  Thank you for visiting DinaBuzz! ❤️
+ </div>
+</section>
+
+<section style="margin-top:25px" id="contact">
+ <h2 class="section-title">Contact Us</h2>
+ <div class="about">
+  For questions, feedback or business enquiries,
+  please contact the website owner.
+ </div>
+</section>
+
+</main>
+
+<footer>
+ <p>© 2026 DinaBuzz. All Rights Reserved.</p>
+ <a href="#about">About Us</a>
+ <a href="#contact">Contact</a>
+ <a href="privacy.html">Privacy Policy</a>
+ <p style="margin-top:12px">Made with ❤️ for Story Lovers</p>
+</footer>
+
+<script>
+const stories=[
+ {
+  title:"True Love Never Dies ❤️",
+  text:"Once upon a time, two young hearts met in a beautiful city. They shared dreams, laughter and unforgettable memories. Life separated them, but their love never disappeared. Years later, destiny brought them together again. They finally understood that true love never dies."
+ },
+ {
+  title:"The Millionaire's Daughter 💑",
+  text:"A poor young boy met a millionaire's daughter on a rainy evening. They became friends and slowly fell in love. Their families did not agree with their relationship. But their kindness, honesty and courage helped them discover what really matters in life."
+ },
+ {
+  title:"Broken Heart 💔",
+  text:"Emma loved Daniel more than anything. One misunderstanding separated them. Both tried to move on, but their memories stayed alive. One day they met again and finally spoke honestly. Sometimes a broken heart needs truth before it can heal."
+ },
+ {
+  title:"One More Chance 🌹",
+  text:"Sophia and James once shared a beautiful relationship. After a painful breakup, they went separate ways. Years later, a chance meeting brought back old memories. They learned to forgive, trust and give love one more chance."
+ }
+];
+
+function showStory(index){
+ document.getElementById("storyTitle").innerText=stories[index].title;
+ document.getElementById("storyText").innerText=stories[index].text;
+ document.getElementById("storyModal").style.display="block";
+}
+function closeStory(){
+ document.getElementById("storyModal").style.display="none";
+}
+function searchStories(){
+ const query=document.getElementById("search").value.toLowerCase();
+ document.querySelectorAll(".card").forEach(card=>{
+  card.style.display=card.dataset.title.includes(query)?"block":"none";
+ });
+}
+</script>
+
+</body>
+</html>
